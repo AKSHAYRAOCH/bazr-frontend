@@ -1,21 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { createAuthClient } from 'better-auth/client'
+import { signIn } from '@/utils/auth-client'
 
 export const Route = createFileRoute('/')({
   component: App,
 })
 
-const authClient = createAuthClient({
-  baseURL: "http://localhost:3000"
-})
-
-const signIn = async () => {
-  const data = await authClient.signIn.social({
-    provider: "google",
-
-  })
-
-}
 
 function App() {
 
